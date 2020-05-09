@@ -3,5 +3,6 @@
 <p><%= @user.name %></p>
 <p><%= @user.room %></p>
 <p><%= @user.email %></p>
+<p><%= image_tag @user.icon.url %></p>
 
 <%= link_to '編集する', edit_user_registration_path %>

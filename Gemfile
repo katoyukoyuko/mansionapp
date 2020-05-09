@@ -8,6 +8,9 @@ gem 'devise-i18n'
 gem 'rails_admin', '~> 2.0'
 gem 'cancancan'
 
+gem 'carrierwave'
+gem 'mini_magick'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.2'
 # Use postgresql as the database for Active Record
