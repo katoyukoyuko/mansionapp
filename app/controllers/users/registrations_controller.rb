@@ -5,9 +5,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
-  # def new
-  #   super
-  # end
+  def new
+    # 新規登録は理事長と管理人のみが管理画面から行うため、ログインしていないユーザーが新規登録すると、ログイン画面にリダイレクトする
+    unless user_signed_in?
+      redirect_to new_user_session_path, notice: 'ログインするか、管理人もしくは理事長にアカウントをもらってください'
+    else
+      super
+    end
+  end
 
   # POST /resource
   # def create
