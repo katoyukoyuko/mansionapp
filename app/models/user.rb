@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :bulletin_boards
   before_destroy :destroy_action
   before_update :update_action
   enum role: [:user, :apartment_manager, :chairman]
