@@ -1,5 +1,10 @@
 class User < ApplicationRecord
-  has_many :bulletin_boards
+  has_many :bulletin_boards, dependent: :destroy
+  validates :name, presence: true
+  validates :email, presence: true
+  validates :role, presence: true
+
+
   before_destroy :destroy_action
   before_update :update_action
   enum role: [:user, :apartment_manager, :chairman]
