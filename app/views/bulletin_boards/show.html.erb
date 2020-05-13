@@ -1,0 +1,14 @@
+<h1>掲示板</h1>
+
+<p>日付</p>
+<%= @bulletin_board.created_at.strftime('%Y/%m/%d') %>
+
+<p>タイトル</p>
+<%= @bulletin_board.title %>
+
+<p>内容</p>
+<%= @bulletin_board.memo %>
+<%= @bulletin_board.content %>
+
+<br>
+<%= link_to '戻る', bulletin_boards_index_path %>
