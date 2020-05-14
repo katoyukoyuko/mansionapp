@@ -1,0 +1,36 @@
+<%= form_with(model: @bulletin_board, url: bulletin_board_url, local: true) do |form| %>
+
+<% if @bulletin_board.errors.any? %>
+  <div>
+    <h2><%= pluralize(@bulletin_board.errors.count, "エラーがあります") %></h2>
+    <ul>
+    <% @bulletin_board.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+  <div>
+    <%= form.label 'タイトル' %>
+    <div>
+      <%= form.text_area :title %>
+    </div>
+  </div>
+
+  <div>
+    <%= form.label '内容' %>
+    <div>
+      <%= form.file_field :content %>
+    </div>
+  </div>
+
+  <div>
+    <%= form.label 'メモ' %>
+    <div>
+      <%= form.text_area :memo %>
+    </div>
+  </div>
+
+  <%= form.submit '作成' %>
+<% end %>

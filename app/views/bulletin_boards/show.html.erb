@@ -8,7 +8,8 @@
 
 <p>内容</p>
 <%= @bulletin_board.memo %>
-<%= @bulletin_board.content %>
+
+<%= image_tag(@bulletin_board.content.url) if @bulletin_board.content && @bulletin_board.content.url %>
 
 <br>
 <%= link_to '戻る', bulletin_boards_index_path %>

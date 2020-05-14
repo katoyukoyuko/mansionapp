@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
   resource :user, only: [:show]
 
-  resource :bulletin_board, only: [:show]
+  resource :bulletin_board, only: [:new, :create, :show]
 
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
