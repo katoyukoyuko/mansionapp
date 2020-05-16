@@ -28,18 +28,9 @@
   </div>
 
   <div>
-    <%= form.label '質問3 : 特に何が気に入っていますか？(複数回答可)' %>
+    <%= form.label '質問3 : 特に何が気に入っていますか？(5択の中から1つ選んで回答してください)' %>
     <div>
-      <%= form.check_box :question3, {}, :favorite, nil %>
-      <%= form.label :question3, "select1" %>
-      <%= form.check_box :question3, {}, :favorite, nil %>
-      <%= form.label :question3, "select2" %>
-      <%= form.check_box :question3, {}, :favorite, nil %>
-      <%= form.label :question3, "select3" %>
-      <%= form.check_box :question3, {}, :favorite, nil %>
-      <%= form.label :question3, "select4" %>
-      <%= form.check_box :question3, {}, :favorite, nil %>
-      <%= form.label :question3, "select5" %>
+      <%= form.select :question3, Questionnaire.question3s.keys.to_a, {} %>
     </div>
   </div>
 

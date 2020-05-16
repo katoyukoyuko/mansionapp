@@ -6,7 +6,7 @@ class QuestionnairesController < ApplicationController
   end
 
   def new
-    if Questionnaire.where(user: current_user).blank? && current_user.role == "user"
+    if Questionnaire.where(user: current_user).blank? && current_user.role != "apartment_manager"
       @questionnaire = Questionnaire.new
       @questionnaire.user = current_user
     elsif current_user.role == "apartment_manager"
@@ -37,7 +37,7 @@ class QuestionnairesController < ApplicationController
 
   private
   def questionnaire_params
-    params.require(:questionnaire).permit(:question1, :question2, { :question3s: [] }, :user_id)
+    params.require(:questionnaire).permit(:question1, :question2, :question3, :user_id)
   end
 
   def set_questionnaire
