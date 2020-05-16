@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :bulletin_boards, dependent: :destroy
+  has_one :questionnaire
   validates :name, presence: true
   validates :email, presence: true
   validates :role, presence: true
