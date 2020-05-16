@@ -19,6 +19,8 @@ Rails.application.routes.draw do
 
   resource :bulletin_board, only: [:new, :create, :show]
 
+  resource :questionnaire, only: [:new, :create, :edit, :index]
+
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
