@@ -1,5 +1,4 @@
 class QuestionnairesController < ApplicationController
-  before_action :set_set_questionnaire, only: [:edit, :update]
 
   def index
     @questionnaires = Questionnaire.all
@@ -25,15 +24,15 @@ class QuestionnairesController < ApplicationController
     end
   end
 
-  def edit; end
+  # def edit; end
 
-  def update
-    if @questionnaire.update
-      redirect_to user_path, notice: 'アンケート回答内容の変更ができました'
-    else
-      render :edit, notice: 'アンケート回答内容の編集できませんでした'
-    end
-  end
+  # def update
+  #   if @questionnaire.update
+  #     redirect_to user_path, notice: 'アンケート回答内容の変更ができました'
+  #   else
+  #     render :edit, notice: 'アンケート回答内容の編集できませんでした'
+  #   end
+  # end
 
   private
   def questionnaire_params
