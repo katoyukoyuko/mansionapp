@@ -1,0 +1,15 @@
+<h1>掲示板</h1>
+
+<p>総会の議事録等を掲載しています。
+<br>ご確認ください。</p>
+
+<% @bulletin_boards.each do |bb| %>
+  <%= bb.created_at.strftime('%Y/%m/%d') %>
+  <%= bb.title %>
+  <%= bb.memo %>
+  <%= link_to '詳細', bulletin_board_path(bb) %>
+  <br>
+<% end %>
+
+<br>
+<%= link_to '管理画面', "/admin" if @user.role != "user" %>

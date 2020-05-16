@@ -10,6 +10,7 @@ gem 'cancancan'
 
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'rmagick'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.2'
