@@ -13,9 +13,10 @@ class BulletinBoardsController < ApplicationController
 
   def create
     @bulletin_board = current_user.bulletin_boards.build(bulletin_boards_params)
+    binding.irb
     if @bulletin_board.save
       redirect_to @bulletin_board, notice: '掲示板を作成しました'
-    else
+   else
       render :new, notice: '保存できませんでした'
     end   
   end

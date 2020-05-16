@@ -9,7 +9,9 @@
 <p>内容</p>
 <%= @bulletin_board.memo %>
 
-<%= image_tag(@bulletin_board.content.url) if @bulletin_board.content && @bulletin_board.content.url %>
+<p>
+<object data="<%= @bulletin_board.content.url %>" type="application/pdf" width="300" height="500"></object>
+</p>
 
 <br>
 <%= link_to '戻る', bulletin_boards_index_path %>
