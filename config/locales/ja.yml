@@ -1,4 +1,3 @@
----
 ja:
   activerecord:
     errors:
@@ -205,3 +204,18 @@ ja:
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
+  view:
+    user:
+      mypage: "マイページ"
+      edit: "編集"
+      room: "号室"
+    bulletenboard:
+      bulletenboard: "掲示板"
+      description: "総会の議事録などが確認できます。"
+      bulletenboardindex: "掲示板一覧"
+    questonnaire:
+      questonnaire: "アンケート"
+      description: "住人の方に本マンションに関するアンケートに回答いただいております。"
+      answer: "アンケート回答"
+    admin:
+      admin: "管理画面"
