@@ -8,7 +8,10 @@ class Ability
     user ||= User.new
 
     if user.role == "chairman"
-      can :manage, :all
+      can :access, :rails_admin
+      can :read, :dashboard
+      can :manage, User
+      can :manage, BulletinBoard
     elsif user.role == "apartment_manager"
       can :access, :rails_admin
       can :read, :dashboard

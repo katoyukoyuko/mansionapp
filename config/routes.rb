@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get 'bulletin_boards/index'
+  get 'questionnaires/index'
   root 'users#show'
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
@@ -18,6 +19,8 @@ Rails.application.routes.draw do
   resource :user, only: [:show]
 
   resource :bulletin_board, only: [:new, :create, :show]
+
+  resource :questionnaire, only: [:new, :create, :index]
 
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"

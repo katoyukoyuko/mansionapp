@@ -1,0 +1,38 @@
+<h1>アンケート回答画面</h1>
+
+<%= form_with(model: @questionnaire, url: questionnaire_url, local: true) do |form| %>
+
+<% if @questionnaire.errors.any? %>
+  <div>
+    <h2><%= pluralize(@questionnaire.errors.count, "エラーがあります") %></h2>
+    <ul>
+    <% @questionnaire.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+  <div>
+    <%= form.label '質問1 : マンションの住み心地はいかがですか？(5段階で回答してください)' %>
+    <div>
+      <%= form.select :question1, Questionnaire.question1s.keys.to_a, {} %>
+    </div>
+  </div>
+
+  <div>
+    <%= form.label '質問2 : 人におすすめできるマンションですか？(5段階で回答してください)' %>
+    <div>
+      <%= form.select :question2, Questionnaire.question2s.keys.to_a, {} %>
+    </div>
+  </div>
+
+  <div>
+    <%= form.label '質問3 : 特に何が気に入っていますか？(5択の中から1つ選んで回答してください)' %>
+    <div>
+      <%= form.select :question3, Questionnaire.question3s.keys.to_a, {} %>
+    </div>
+  </div>
+
+  <%= form.submit '回答する' %>
+<% end %>
