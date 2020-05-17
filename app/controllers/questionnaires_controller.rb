@@ -1,7 +1,9 @@
 class QuestionnairesController < ApplicationController
 
   def index
-    @questionnaires = Questionnaire.all
+    @question1 = Questionnaire.group(:question1).count
+    @question2 = Questionnaire.group(:question2).count
+    @question3 = Questionnaire.group(:question3).count
   end
 
   def new

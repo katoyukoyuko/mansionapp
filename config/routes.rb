@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get 'bulletin_boards/index'
+  get 'questionnaires/index'
   root 'users#show'
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
