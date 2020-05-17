@@ -2,9 +2,21 @@ class QuestionnairesController < ApplicationController
 
   def index
     if current_user.role != "user"
-    @question1 = Questionnaire.group(:question1).count
-    @question2 = Questionnaire.group(:question2).count
-    @question3 = Questionnaire.group(:question3).count
+    @question1 = [[t('enum.questonnaire.question1.verygood'), Questionnaire.where(question1: 0).count],
+    [t('enum.questonnaire.question1.good'), Questionnaire.where(question1: 1).count],
+    [t('enum.questonnaire.question1.neutral'), Questionnaire.where(question1: 2).count],
+    [t('enum.questonnaire.question1.bad'), Questionnaire.where(question1: 3).count],
+    [t('enum.questonnaire.question1.verybad'), Questionnaire.where(question1: 4).count]]
+    @question2 = [[t('enum.questonnaire.question2.highrecommend'), Questionnaire.where(question2: 0).count],
+    [t('enum.questonnaire.question2.recommend'), Questionnaire.where(question2: 1).count],
+    [t('enum.questonnaire.question2.soso'), Questionnaire.where(question2: 2).count],
+    [t('enum.questonnaire.question2.not'), Questionnaire.where(question2: 3).count],
+    [t('enum.questonnaire.question2.verynot'), Questionnaire.where(question2: 4).count]]
+    @question3 = [[t('enum.questonnaire.question3.select1'), Questionnaire.where(question3: 0).count],
+    [t('enum.questonnaire.question3.select2'), Questionnaire.where(question3: 1).count],
+    [t('enum.questonnaire.question3.select3'), Questionnaire.where(question3: 2).count],
+    [t('enum.questonnaire.question3.select4'), Questionnaire.where(question3: 3).count],
+    [t('enum.questonnaire.question3.select5'), Questionnaire.where(question3: 4).count]]
     else
       redirect_to user_path, notice: 'アンケート結果は理事長、管理人のみ閲覧できます'
     end

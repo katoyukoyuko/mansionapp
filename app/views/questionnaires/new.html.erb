@@ -16,7 +16,7 @@
   <div>
     <%= form.label t('view.questonnaire.question1') %>
     <div>
-      <%= form.select :question1, Questionnaire.question1s.keys.to_a, {} %>
+      <%= form.select :question1, Questionnaire.question1s_i18n.keys.map{|k| [I18n.t("enum.questonnaire.question1.#{k}"), k]} %>
     </div>
   </div>
   <hr>
@@ -24,7 +24,7 @@
   <div>
     <%= form.label t('view.questonnaire.question2') %>
     <div>
-      <%= form.select :question2, Questionnaire.question2s.keys.to_a, {} %>
+      <%= form.select :question2, Questionnaire.question2s_i18n.keys.map{|k| [I18n.t("enum.questonnaire.question2.#{k}"), k]} %>
     </div>
   </div>
   <hr>
@@ -32,7 +32,7 @@
   <div>
     <%= form.label t('view.questonnaire.question3') %>
     <div>
-      <%= form.select :question3, Questionnaire.question3s.keys.to_a, {} %>
+      <%= form.select :question3, Questionnaire.question3s_i18n.keys.map{|k| [I18n.t("enum.questonnaire.question3.#{k}"), k]} %>
     </div>
   </div>
   <br>

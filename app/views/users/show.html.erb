@@ -25,8 +25,9 @@
 <% if @user.role != "apartment_manager" %>
 <h2><%= t('view.questonnaire.questonnaire') %></h2>
 <p><%= t('view.questonnaire.description') %></p>
+<%= link_to t('view.questonnaire.answer'), new_questionnaire_path %>
 <% end %>
-<%= link_to t('view.questonnaire.answer'), new_questionnaire_path if @user.role != "apartment_manager" %>
+<%= link_to t('view.questonnaire.result'), questionnaires_index_path if @user.role != "user"%>
 
 <hr>
 <%= link_to t('view.admin.admin'), "/admin" if @user.role != "user" %>
