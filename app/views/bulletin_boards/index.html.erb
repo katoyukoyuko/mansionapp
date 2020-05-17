@@ -6,9 +6,11 @@
 <% @bulletin_boards.each do |bb| %>
   <%= bb.created_at.strftime('%Y/%m/%d') %>
   <%= link_to bb.title, bulletin_board_path(bb) %>
-  <%= link_to bb.memo, bulletin_board_path(bb) %>
+  <%= link_to bb.memo, bulletin_board_path(bb) if bb.memo.present? %>
   <hr>
 <% end %>
+
+<%= paginate @bulletin_boards %>
 
 <br>
 <%= link_to t('view.admin.admin'), "/admin" if @user.role != "user" %>

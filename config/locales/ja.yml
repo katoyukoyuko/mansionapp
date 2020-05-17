@@ -253,3 +253,10 @@ ja:
         select3: "立地"
         select4: "地域の環境"
         select5: "その他"
+  views:
+    pagination:
+      first: "&laquo; 最初"
+      last: "最後 &raquo;"
+      previous: "&lsaquo; 前"
+      next: "次 &rsaquo;"
+      truncate: "..."

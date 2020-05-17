@@ -3,7 +3,7 @@ class BulletinBoardsController < ApplicationController
   before_action :set_user, only: [:index]
 
   def index
-    @bulletin_boards = BulletinBoard.all
+    @bulletin_boards = BulletinBoard.all.order(created_at: :desc).page(params[:page]).per(2)
   end
 
   def new
