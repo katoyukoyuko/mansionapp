@@ -11,11 +11,12 @@
 
   <body>
     <% if user_signed_in? %>
-      <%#= link_to "ブログ投稿", blogs_path %>
-      <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+      <%= link_to t('view.user.mypage'), user_path %>
+      <%= link_to t('view.admin.admin'), "/admin" if @user.role != "user" %>
+      <%= link_to t('view.session.logout'), destroy_user_session_path, method: :delete %>
     <% else %>
-      <%= link_to "新規登録", new_user_registration_path %>
-      <%= link_to "ログイン", new_user_session_path %>
+      <%= link_to t('view.session.signin'), new_user_registration_path %>
+      <%= link_to t('view.session.login'), new_user_session_path %>
     <% end %>
 
     <% if notice %>
