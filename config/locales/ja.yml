@@ -205,6 +205,8 @@ ja:
       short: "%m/%d %H:%M"
     pm: 午後
   view:
+    app:
+      name: "MANSION MANAGEMENT"
     user:
       mypage: "マイページ"
       edit: "編集"

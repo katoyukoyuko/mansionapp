@@ -10,21 +10,51 @@
   </head>
 
   <body>
-    <% if user_signed_in? %>
-      <%= link_to t('view.user.mypage'), user_path %>
-      <%= link_to t('view.admin.admin'), "/admin" if current_user.role != "user" %>
-      <%= link_to t('view.session.logout'), destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to t('view.session.signin'), new_user_registration_path %>
-      <%= link_to t('view.session.login'), new_user_session_path %>
-    <% end %>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <%= link_to t('view.app.name'), user_path , class: "navbar-brand" %>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <% if user_signed_in? %>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <%= link_to t('view.user.mypage'), user_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to t('view.session.logout'), destroy_user_session_path, method: :delete, class: "nav-link" %>
+        </li>
+        <% if current_user.role != "user" %>
+        <li class="nav-item">
+          <%= link_to t('view.admin.admin'), "/admin", class: "nav-link" %>
+        </li>
+        <% end %>
+      </ul>
+      <% else %>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <%= link_to t('view.session.signin'), new_user_registration_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to t('view.session.login'), new_user_session_path, class: "nav-link" %>
+        </li>
+      </ul>
+      <% end %>
+    </div>
+    </nav>
+
 
     <% if notice %>
-      <p class="alert alert-notice"><%= notice %></p>
+      <p class="alert alert-secondary"role="alert"><%= notice %></p>
     <% end %>
     <% if alert %>
-      <p class="alert alert-error"><%= alert %></p>
+      <p class="alert alert-warning" role="alert"><%= alert %></p>
     <% end %>
+
     <%= yield %>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
   </body>
 </html>
