@@ -12,7 +12,7 @@
   <body>
     <% if user_signed_in? %>
       <%= link_to t('view.user.mypage'), user_path %>
-      <%= link_to t('view.admin.admin'), "/admin" if @user.role != "user" %>
+      <%= link_to t('view.admin.admin'), "/admin" if current_user.role != "user" %>
       <%= link_to t('view.session.logout'), destroy_user_session_path, method: :delete %>
     <% else %>
       <%= link_to t('view.session.signin'), new_user_registration_path %>
