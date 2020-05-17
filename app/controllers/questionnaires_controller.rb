@@ -1,9 +1,13 @@
 class QuestionnairesController < ApplicationController
 
   def index
+    if current_user.role != "user"
     @question1 = Questionnaire.group(:question1).count
     @question2 = Questionnaire.group(:question2).count
     @question3 = Questionnaire.group(:question3).count
+    else
+      redirect_to user_path, notice: 'アンケート結果は理事長、管理人のみ閲覧できます'
+    end
   end
 
   def new
