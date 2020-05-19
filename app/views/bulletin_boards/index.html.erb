@@ -13,4 +13,6 @@
 <%= paginate @bulletin_boards %>
 
 <br>
-<%= link_to t('view.admin.admin'), "/admin" if @user.role != "user" %>
+<p class="text-center">
+<%= link_to t('view.admin.admin'), "/admin",class: "button" if @user.role != "user" %>
+</p>

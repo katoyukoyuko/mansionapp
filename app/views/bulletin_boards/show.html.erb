@@ -1,17 +1,19 @@
 <h1><%= t('view.bulletenboard.bulletenboard') %></h1>
 
-<p><%= t('view.bulletenboard.createdat') %></p>
-<%= @bulletin_board.created_at.strftime('%Y/%m/%d') %>
+<p class="text-center small"><%= t('view.bulletenboard.createdat') %></p>
+<p class="text-center"><%= @bulletin_board.created_at.strftime('%Y/%m/%d') %></p>
 
-<p><%= t('view.bulletenboard.title') %></p>
-<%= @bulletin_board.title %>
+<p class="text-center small"><%= t('view.bulletenboard.title') %></p>
+<p class="text-center"><%= @bulletin_board.title %></p>
 
-<p><%= t('view.bulletenboard.content') %></p>
-<%= @bulletin_board.memo %>
+<p class="text-center small"><%= t('view.bulletenboard.content') %></p>
+<p class="text-center"><%= @bulletin_board.memo %></p>
 
-<p>
+<p class="text-center">
 <object data="<%= @bulletin_board.content.url %>" type="application/pdf" width="300" height="500"></object>
 </p>
 
 <br>
-<%= link_to t('view.bulletenboard.bulletenboardindex'), bulletin_boards_index_path %>
+<p class="text-center">
+<%= link_to t('view.bulletenboard.bulletenboardindex'), bulletin_boards_index_path, class: "button" %>
+</p>
