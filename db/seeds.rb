@@ -14,9 +14,34 @@ User.create!(
     role: 'chairman',
     )
 
+User.create!(
+    name: '山田太郎',
+    email: 'taro@test.com',
+    password: '000000',
+    password_confirmation: '000000',
+    role: 'apartment_manager',
+    )
+
+20.times do |n|
+name  = "example-#{n+1}"
+email = "example-#{n+1}@example.com"
+    
+User.create!(
+    name: name,
+    email: email,
+    password: '000000',
+    password_confirmation: '000000',
+    role: 'user',
+    )
+end
+
+20.times do |n|
+title  = "第#{n+1}回理事会議事録"
+memo = "第#{n+1}回理事会の議事録を作成いたしましたので、ご確認お願いいたします。"
 BulletinBoard.create!(
-    title: '第1回理事会議事録',
+    title: title,
     content: open("#{Rails.root}/db/fixtures/note1.pdf"),
-    memo: '2020年4月15日に開催した第1回理事会の議事録を作成いたしましたので、ご確認お願いいたします。',
+    memo: memo,
     user_id: 1,
     )
+end
