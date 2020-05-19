@@ -206,7 +206,8 @@ ja:
     pm: 午後
   view:
     app:
-      name: "MANSION MANAGEMENT"
+      name1: "MANSION"
+      name2: "MANAGEMENT"
     user:
       mypage: "マイページ"
       edit: "編集"
@@ -227,6 +228,7 @@ ja:
       question1: "質問1 : マンションの住み心地はいかがですか？(5段階で回答してください)"
       question2: "質問2 : 人におすすめできるマンションですか？(5段階で回答してください)"
       question3: "質問3 : 特に何が気に入っていますか？(5択の中から1つ選んで回答してください)"
+      answerbutton: "回答する"
     admin:
       admin: "管理画面"
     session:
