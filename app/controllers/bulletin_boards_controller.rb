@@ -1,6 +1,7 @@
 class BulletinBoardsController < ApplicationController
   before_action :set_bulletin_board, only: [:show]
   before_action :set_user, only: [:index]
+  before_action :authenticate_user!
 
   def index
     @bulletin_boards = BulletinBoard.all.order(created_at: :desc).page(params[:page]).per(10)
