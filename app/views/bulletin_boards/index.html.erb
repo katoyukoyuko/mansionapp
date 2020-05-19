@@ -14,5 +14,9 @@
 
 <br>
 <p class="text-center">
-<%= link_to t('view.admin.admin'), "/admin",class: "button" if @user.role != "user" %>
+  <%= link_to t('view.bulletenboard.new'), new_bulletin_board_path ,class: "button" if @user.role == "chairman" %>
+</p>
+<br>
+<p class="text-center">
+  <%= link_to t('view.admin.admin'), "/admin",class: "button" if @user.role != "user" %>
 </p>
