@@ -1,15 +1,18 @@
-<h1>掲示板</h1>
+<h1><%= t('view.bulletenboard.bulletenboard') %></h1>
 
-<p>総会の議事録等を掲載しています。
-<br>ご確認ください。</p>
+<p class="text-center"><%= t('view.bulletenboard.indexdesc') %></p>
 
+<hr>
 <% @bulletin_boards.each do |bb| %>
   <%= bb.created_at.strftime('%Y/%m/%d') %>
-  <%= bb.title %>
-  <%= bb.memo %>
-  <%= link_to '詳細', bulletin_board_path(bb) %>
-  <br>
+  <%= link_to bb.title, bulletin_board_path(bb) %>
+  <%= link_to bb.memo, bulletin_board_path(bb) if bb.memo.present? %>
+  <hr>
 <% end %>
 
+<%= paginate @bulletin_boards %>
+
 <br>
-<%= link_to '管理画面', "/admin" if @user.role != "user" %>
+<p class="text-center">
+<%= link_to t('view.admin.admin'), "/admin",class: "button" if @user.role != "user" %>
+</p>

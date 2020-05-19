@@ -5,6 +5,7 @@ ruby '2.6.5'
 
 gem 'devise'
 gem 'devise-i18n'
+gem 'enum_help'
 gem 'rails_admin', '~> 2.0'
 gem 'cancancan'
 
@@ -13,6 +14,8 @@ gem 'mini_magick'
 gem 'rmagick'
 
 gem "chartkick"
+
+gem 'kaminari'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.2'

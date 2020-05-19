@@ -1,0 +1,28 @@
+ja:
+  activerecord:
+    models:
+      bulletin_board: 掲示板
+      user: ユーザー
+    attributes:
+      bulletin_board:
+        title: タイトル
+        content: 内容
+        memo: 内容(テキスト)
+        created_at: 作成日時
+        updated_at: 更新日時
+        user: 投稿ユーザー
+      user:
+        title: タイトル
+        name: 名前
+        nickname: ニックネーム
+        email: メールアドレス
+        current_password: 現在のパスワード
+        password: パスワード
+        password_confirmation: 確認用パスワード
+        remember_me: ログインを記憶
+        role: ユーザー権限種別
+        name_ruby: ふりがな
+        icon: アイコン画像
+        questionnaire: 回答したアンケート
+        bulletin_boards: 投稿した掲示板
+        room: 室番号

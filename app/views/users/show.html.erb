@@ -1,17 +1,40 @@
-<h1>MyPage</h1>
-<p><%= @user.name_ruby %></p>
-<p><%= @user.name %></p>
-<p><%= @user.room %></p>
-<p><%= @user.email %></p>
-<p><%= image_tag @user.icon.url if @user.icon.present? %></p>
+<h1><%= t('view.user.mypage') %></h1>
 
-<%= link_to '編集する', edit_user_registration_path %>
+<span>
+  <p class="text-center"><%= image_tag @user.icon.url if @user.icon.present? %></p>
+
+  <p class="text-center"><%= @user.name %>
+  <% if @user.nickname.present? %>
+    <span>(<%= @user.nickname %>)</span>
+  <% end %>
+  </p>
+
+  <p class="text-center"><%= @user.email %></p>
+
+  <% if @user.room.present? %>
+    <p class="text-center"><%= @user.room %><%= t('view.user.room') %></p>
+  <% end %>
+
+  <p class="text-center">
+  <%= link_to t('view.user.edit'), edit_user_registration_path %>
+  </p>
+</span>
 
 <hr>
-<br>
-<%= link_to '掲示板', bulletin_boards_index_path %>
-<br>
-<%= link_to 'アンケート回答', new_questionnaire_path if @user.role != "apartment_manager" %>
+<h1><%= t('view.bulletenboard.bulletenboard') %></h2>
+<p class="text-center"><%= t('view.bulletenboard.description') %></p>
+<p class="text-center button"><%= link_to t('view.bulletenboard.bulletenboardindex'), bulletin_boards_index_path %></p>
 <br>
 
-<%= link_to '管理画面', "/admin" if @user.role != "user" %>
+<% if @user.role != "apartment_manager" %>
+<h1><%= t('view.questonnaire.questonnaire') %></h2>
+<p class="text-center"><%= t('view.questonnaire.description') %></p>
+<p class="text-center button"><%= link_to t('view.questonnaire.answer'), new_questionnaire_path %></p>
+<% end %>
+<% if @user.role != "user" %>
+<p class="text-center button"><%= link_to t('view.questonnaire.result'), questionnaires_index_path%></p>
+<% end %>
+<% if @user.role != "user" %>
+<hr>
+<p class="text-center button"><%= link_to t('view.admin.admin'), "/admin", target: "_blank" %></p>
+<% end %>

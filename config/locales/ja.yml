@@ -1,4 +1,3 @@
----
 ja:
   activerecord:
     errors:
@@ -205,3 +204,63 @@ ja:
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
+  view:
+    app:
+      name1: "MANSION"
+      name2: "MANAGEMENT"
+    user:
+      mypage: "マイページ"
+      edit: "編集"
+      room: "号室"
+    bulletenboard:
+      bulletenboard: "掲示板"
+      description: "総会の議事録などが確認できます。"
+      indexdesc: "総会の議事録等を掲載しています。ご確認ください。"
+      bulletenboardindex: "掲示板一覧"
+      createdat: "日付"
+      title: "タイトル"
+      content: "内容"
+    questonnaire:
+      questonnaire: "アンケート"
+      description: "住人の方に本マンションに関するアンケートに回答いただいております。"
+      answer: "アンケート回答"
+      result: "アンケート結果"
+      question1: "質問1 : マンションの住み心地はいかがですか？(5段階で回答してください)"
+      question2: "質問2 : 人におすすめできるマンションですか？(5段階で回答してください)"
+      question3: "質問3 : 特に何が気に入っていますか？(5択の中から1つ選んで回答してください)"
+      answerbutton: "回答する"
+    admin:
+      admin: "管理画面"
+    session:
+      logout: "ログアウト"
+      login: "ログイン"
+      signin: "新規登録"
+    error:
+      error: "エラーがあります。"
+  enum:
+    questonnaire:
+      question1:
+        verybad: "とても悪い"
+        bad: "悪い"
+        neutral: "普通"
+        good: "良い"
+        verygood: "とても良い"
+      question2:
+        highrecommend: "とてもおすすめする"
+        recommend: "おすすめする"
+        soso: "どちらでもない"
+        not: "おすすめしない"
+        verynot: "かなりおすすめしない"
+      question3:
+        select1: "共有施設の充実度"
+        select2: "私用区域の快適さ"
+        select3: "立地"
+        select4: "地域の環境"
+        select5: "その他"
+  views:
+    pagination:
+      first: "&laquo; 最初"
+      last: "最後 &raquo;"
+      previous: "&lsaquo; 前"
+      next: "次 &rsaquo;"
+      truncate: "..."
