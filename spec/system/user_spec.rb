@@ -2,10 +2,11 @@ require 'rails_helper'
 
 RSpec.describe 'ユーザー機能', type: :system do
   before do
-    @user = create(:user)
-    user.confirm
+    # login_admin
+    login_user
+    # sign_in FactoryBot.create(:user)
     # click_button 'メールアドレスの確認'
-    sign_in user
+    # sign_in user
     # @user2 = FactoryBot.create(:user2)
     # FactoryBot.create(:user3)
   end

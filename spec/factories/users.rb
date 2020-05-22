@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :user do
+  factory :admin do
     name { 'sample' }
     email { 'sample@example.com' }
     password { '000000' }
@@ -11,10 +11,10 @@ FactoryBot.define do
   #   password { '000000' }
   #   role { 'chairman' }
   # end
-  # factory :use2, class: User do
-  #   name { 'apartment_manager' }
-  #   email { 'apartment_manager@example.com' }
-  #   password { '000000' }
-  #   role { 'apartment_manager' }
-  # end
+  factory :use, class: User do
+    name { 'apartment_manager' }
+    email { 'apartment_manager@example.com' }
+    password { '000000' }
+    role { 'apartment_manager' }
+  end
 end
