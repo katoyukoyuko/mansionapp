@@ -7,9 +7,7 @@
   <%= link_to bb.memo, bulletin_board_path(bb) if bb.memo.present? %>
   <hr>
 <% end %>
-
 <%= paginate @bulletin_boards %>
-
 <br>
 <p class="text-center">
   <%= link_to t('view.bulletenboard.new'), new_bulletin_board_path ,class: "button" if @user.role == "chairman" %>
