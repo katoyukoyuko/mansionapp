@@ -12,6 +12,7 @@ User.create!(
     password: '000000',
     password_confirmation: '000000',
     role: 'chairman',
+    confirmed_at: Time.now,
     )
 
 User.create!(
@@ -20,6 +21,7 @@ User.create!(
     password: '000000',
     password_confirmation: '000000',
     role: 'apartment_manager',
+    confirmed_at: Time.now,
     )
 
 20.times do |n|
@@ -32,6 +34,7 @@ User.create!(
     password: '000000',
     password_confirmation: '000000',
     role: 'user',
+    confirmed_at: Time.now,
     )
 end
 
