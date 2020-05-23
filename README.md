@@ -17,3 +17,8 @@ https://gyazo.com/a341e97a87b7853fbd486c9132c228be
 - devise (ログイン機能)
 - Kamakiri (ページネーション実装)
 - spec-rails (Rspec) ...etc
+
+## アプリの使い方
+- アプリダウンロード後は、rails db:seed を行い、以下のアカウントでログインして触ってみてください
+- email: 'hanako@test.com'
+- password: '000000'
