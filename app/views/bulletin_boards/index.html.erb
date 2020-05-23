@@ -1,7 +1,5 @@
 <h1><%= t('view.bulletenboard.bulletenboard') %></h1>
-
 <p class="text-center"><%= t('view.bulletenboard.indexdesc') %></p>
-
 <hr>
 <% @bulletin_boards.each do |bb| %>
   <%= bb.created_at.strftime('%Y/%m/%d') %>
