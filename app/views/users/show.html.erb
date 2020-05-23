@@ -36,5 +36,7 @@
 <% end %>
 <% if @user.role != "user" %>
 <hr>
-<p class="text-center button"><%= link_to t('view.admin.admin'), "/admin", target: "_blank" %></p>
+<p class="text-center">
+  <button class="button"><%= link_to t('view.admin.admin'), "/admin" %></button>
+</p>
 <% end %>

@@ -1,4 +1,5 @@
 class QuestionnairesController < ApplicationController
+  before_action :authenticate_user!
 
   def index
     if current_user.role != "user"
@@ -42,6 +43,7 @@ class QuestionnairesController < ApplicationController
     end
   end
 
+  # 今後編集機能を検討する可能性があるので一旦以下の記述そのまま残しています
   # def edit; end
 
   # def update

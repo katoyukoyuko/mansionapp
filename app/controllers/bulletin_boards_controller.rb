@@ -1,6 +1,7 @@
 class BulletinBoardsController < ApplicationController
   before_action :set_bulletin_board, only: [:show]
   before_action :set_user, only: [:index]
+  before_action :authenticate_user!
 
   def index
     @bulletin_boards = BulletinBoard.all.order(created_at: :desc).page(params[:page]).per(10)
@@ -14,6 +15,7 @@ class BulletinBoardsController < ApplicationController
   def create
     @bulletin_board = current_user.bulletin_boards.build(bulletin_boards_params)
     if @bulletin_board.save
+      BulletinBoardMailer.bulletin_board_mail(@bulletin_board, current_user.email).deliver
       redirect_to @bulletin_board, notice: '掲示板を作成しました'
     else
       render :new, notice: '保存できませんでした'

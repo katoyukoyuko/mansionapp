@@ -214,12 +214,14 @@ ja:
       room: "号室"
     bulletenboard:
       bulletenboard: "掲示板"
+      new: "掲示板登録"
       description: "総会の議事録などが確認できます。"
       indexdesc: "総会の議事録等を掲載しています。ご確認ください。"
       bulletenboardindex: "掲示板一覧"
       createdat: "日付"
       title: "タイトル"
       content: "内容"
+      mailtitle: "掲示板を投稿しました"
     questonnaire:
       questonnaire: "アンケート"
       description: "住人の方に本マンションに関するアンケートに回答いただいております。"

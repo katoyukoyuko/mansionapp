@@ -1,3 +1,4 @@
+<h1><%= t('view.bulletenboard.new') %></h1>
 <%= form_with(model: @bulletin_board, url: bulletin_board_url, local: true) do |form| %>
 
 <% if @bulletin_board.errors.any? %>
@@ -11,26 +12,28 @@
   </div>
 <% end %>
 
-  <div>
-    <%= form.label 'タイトル' %>
+  <div class="text-center">
+    <%= form.label :title %>
     <div>
       <%= form.text_area :title %>
     </div>
   </div>
 
-  <div>
-    <%= form.label '内容' %>
+  <div class="text-center">
+    <%= form.label :content %>
     <div>
       <%= form.file_field :content %>
     </div>
   </div>
 
-  <div>
-    <%= form.label 'メモ' %>
+  <div class="text-center">
+    <%= form.label :memo %>
     <div>
       <%= form.text_area :memo %>
     </div>
   </div>
 
-  <%= form.submit '作成' %>
+  <p class="text-center">
+    <%= form.submit t('view.bulletenboard.new'),class: "button" %>
+  </p>
 <% end %>
