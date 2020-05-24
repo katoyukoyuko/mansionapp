@@ -19,6 +19,8 @@ https://gyazo.com/a341e97a87b7853fbd486c9132c228be
 - spec-rails (Rspec) ...etc
 
 ## アプリの使い方
-- アプリダウンロード後は、rails db:seed を行い、以下のアカウントでログインして触ってみてください
+- アプリダウンロード後は、rails db:seed を行い、以下のアカウントでログインして触ってみてください 
 - email: 'hanako@test.com'
 - password: '000000'
+- ※ 本アプリは、ユーザーの新規登録は権限(role)が理事長(chairman)か管理人(apartment_manager)のみ行えます。
+　　 上記のseedデータにある、テストアカウントでログイン後、ユーザー新規登録を行ってください。

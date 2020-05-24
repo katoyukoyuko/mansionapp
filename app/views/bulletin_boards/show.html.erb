@@ -10,7 +10,11 @@
 <p class="text-center"><%= @bulletin_board.memo %></p>
 
 <p class="text-center">
-<object data="<%= @bulletin_board.content.url %>" type="application/pdf" width="300" height="500"></object>
+  <object data="<%= @bulletin_board.content.url %>" type="application/pdf" width="500" height="500">
+    <iframe src="<%= @bulletin_board.content.url %>" width="100%" height="100%">
+    <p><b>表示されない時の表示</b>: <a href="<%= @bulletin_board.content.url %>">PDF をダウンロード</a>.</p>
+    </iframe>
+  </object>
 </p>
 
 <br>
