@@ -222,6 +222,7 @@ ja:
       title: "タイトル"
       content: "内容"
       mailtitle: "掲示板を投稿しました"
+      required: "必須"
     questonnaire:
       questonnaire: "アンケート"
       description: "住人の方に本マンションに関するアンケートに回答いただいております。"

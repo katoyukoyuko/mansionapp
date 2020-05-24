@@ -55,7 +55,7 @@ h1 {
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%)
-  }
+}
 h1:before {
     content: '';
     position: absolute;
@@ -67,7 +67,7 @@ h1:before {
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
     background-color: black;
-  }
+}
 
 h2{
     font-size: 1.2em;
@@ -121,4 +121,12 @@ input{
 .page-item.active .page-link {     
     background-color: #000000;     /*背景の色を変える*/
     padding: 10px;
+}
+
+.bulletinboard-new-form{
+    width: 400px;
+}
+
+object{
+    object-fit: contain;
 }

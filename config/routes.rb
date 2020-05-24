@@ -22,7 +22,8 @@ Rails.application.routes.draw do
 
   resource :questionnaire, only: [:new, :create, :index]
 
-  if Rails.env.development?
-    mount LetterOpenerWeb::Engine, at: "/letter_opener"
-  end
+  # herokuでSendGridのアカウントが利用できないので、letter_openerを使用するためこの部分をコメントする
+  # if Rails.env.development?
+  mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  # end
 end
