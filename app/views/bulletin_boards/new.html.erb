@@ -2,7 +2,7 @@
 <%= form_with(model: @bulletin_board, url: bulletin_board_url, local: true) do |form| %>
 
 <% if @bulletin_board.errors.any? %>
-  <div>
+  <div class="alert alert-danger">
     <h2><%= pluralize(@bulletin_board.errors.count, "エラーがあります") %></h2>
     <ul>
     <% @bulletin_board.errors.full_messages.each do |message| %>
@@ -13,27 +13,29 @@
 <% end %>
 
   <div class="text-center">
-    <%= form.label :title %>
+    <%= form.label :title, class: "lead" %>
+    <span class="badge badge-danger"><%= t('view.bulletenboard.required')%></span>
     <div>
-      <%= form.text_area :title %>
+      <%= form.text_area :title, class: "bulletinboard-new-form" %>
     </div>
   </div>
 
   <div class="text-center">
-    <%= form.label :content %>
+    <%= form.label :content, class: "lead" %>
+    <span class="badge badge-danger"><%= t('view.bulletenboard.required')%></span>
     <div>
-      <%= form.file_field :content %>
+      <%= form.file_field :content, class: "bulletinboard-new-form"  %>
     </div>
   </div>
 
   <div class="text-center">
-    <%= form.label :memo %>
+    <%= form.label :memo, class: "lead" %>
     <div>
-      <%= form.text_area :memo %>
+      <%= form.text_area :memo, class: "bulletinboard-new-form"  %>
     </div>
   </div>
 
-  <p class="text-center">
+  <p class="text-center mt-4">
     <%= form.submit t('view.bulletenboard.new'),class: "button" %>
   </p>
 <% end %>

@@ -7,7 +7,7 @@ ja:
       bulletin_board:
         title: タイトル
         content: 内容
-        memo: 内容(テキスト)
+        memo: 補足
         created_at: 作成日時
         updated_at: 更新日時
         user: 投稿ユーザー
